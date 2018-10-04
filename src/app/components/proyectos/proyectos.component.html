@@ -1,28 +1,17 @@
 <hr>
 <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-6" *ngFor="let proyecto of proyect">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Proyecto: {{ proyect.name }}</h5>
-                <p class="card-text">Fecha de inicio: {{ proyect.initialdate }}</p>
-                <p class="card-text">Fecha de fin: {{ proyect.finaldate }}</p>
-                <p class="card-text">Tipo de proyecto: {{ proyect.type }}</p>
-                <p class="card-text">Porcentaje: {{ proyect.qualification }}</p>
+                <h5 class="card-title">Proyecto: {{ proyecto.name }}</h5>
+                <p class="card-text">Fecha de inicio: {{ proyecto.initialdate }}</p>
+                <p class="card-text">Fecha de fin: {{ proyecto.finaldate }}</p>
+                <p class="card-text">Tipo de proyecto: {{ proyecto.type }}</p>
+                <p class="card-text">Porcentaje: {{ proyecto.qualification }}</p>
                 <a href="#" class="btn btn-primary">Ver más...</a>
             </div>
         </div>
-    </div>
-    <div class="col-sm-6">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Proyecto: {{ proyect.name }}</h5>
-                <p class="card-text">Fecha de inicio: {{ proyect.initialdate }}</p>
-                <p class="card-text">Fecha de fin: {{ proyect.finaldate }}</p>
-                <p class="card-text">Tipo de proyecto: {{ proyect.type }}</p>
-                <p class="card-text">Porcentaje: {{ proyect.qualification }}</p>
-                <a href="#" class="btn btn-primary">Ver más...</a>
-            </div>
-        </div>
+        <hr>
     </div>
 </div>
 <hr>
