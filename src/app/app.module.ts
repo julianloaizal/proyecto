@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { APP_ROUTING } from './app.routes';
 
 // Servicios
+import { ProyectService } from './service/proyect.service';
 
 // Componentes
 import { AppComponent } from './app.component';
@@ -26,7 +27,9 @@ import { FooterComponent } from './components/footer/footer.component';
     BrowserModule,
     APP_ROUTING
   ],
-  providers: [],
+  providers: [
+    ProyectService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
