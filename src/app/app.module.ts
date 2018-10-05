@@ -5,6 +5,7 @@ import { APP_ROUTING } from './app.routes';
 
 // Servicios
 import { ProyectService } from './service/proyect.service';
+import { HttpClientModule }    from '@angular/common/http';
 
 // Componentes
 import { AppComponent } from './app.component';
@@ -27,6 +28,7 @@ import { LoginComponent } from './components/login/login.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     APP_ROUTING
   ],
   providers: [

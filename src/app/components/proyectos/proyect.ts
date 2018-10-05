@@ -1,18 +1,15 @@
 
 export class Proyect {
-name: String;
-type: String;
-modality: String;
-responsable: String;
-adviser: String;
-participants: String[];
-creationdate: String;
-initialdate: String;
-finaldate: String;
-qualification: Number;
-state: String;
-deliverables: Number;
-generalpurpose: String;
-specificobjectives: String;
-recognitions: String;
+    radicado: number;
+    nombre: string;
+    tipo: number;
+    id_programa: number;
+    asesor: number;
+    responsable: number;
+    fecha_creacion: string;
+    fecha_inicio: string;
+    fecha_fin: string;
+    calificacion: string;
+    objetivo_general: string;
+    id_estado: string;
 }

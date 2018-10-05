@@ -3,11 +3,10 @@
     <div class="col-sm-6" *ngFor="let proyecto of proyect">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Proyecto: {{ proyecto.name }}</h5>
-                <p class="card-text">Fecha de inicio: {{ proyecto.initialdate }}</p>
-                <p class="card-text">Fecha de fin: {{ proyecto.finaldate }}</p>
-                <p class="card-text">Tipo de proyecto: {{ proyecto.type }}</p>
-                <p class="card-text">Porcentaje: {{ proyecto.percentage }}</p>
+                <h5 class="card-title">Proyecto: {{ proyecto.nombre }}</h5>
+                <p class="card-text">Fecha de inicio: {{ proyecto.fecha_inicio }}</p>
+                <p class="card-text">Fecha de fin: {{ proyecto.fecha_fin }}</p>
+                <p class="card-text">Tipo de proyecto: {{ proyecto.tipo }}</p>
                 <a href="#" class="btn btn-primary">Ver más...</a>
             </div>
         </div>
@@ -16,47 +15,3 @@
 </div>
 <hr>
 
-<div class="list-group">
-    <a class="list-group-item list-group-item-action active bg-dark">
-        <li class="text-white bg-dark">Proyecto: {{ proyect.name }}</li>
-    </a>
-    <a class="list-group-item list-group-item-action">
-        <li>Tipo de proyecto: {{ proyect.type }}</li>
-    </a>
-    <a class="list-group-item list-group-item-action">
-        <li>Modalidad: {{ proyect.modality }}</li>
-    </a>
-    <a class="list-group-item list-group-item-action">
-        <li>Responsable: {{ proyect.responsable }}</li>
-    </a>
-    <a class="list-group-item list-group-item-action">
-        <li>Asesor: {{ proyect.adviser }}</li>
-    </a>
-    <a class="list-group-item list-group-item-action">
-        <li>Participantes: {{ proyect.participants }}</li>
-    </a>
-    <a class="list-group-item list-group-item-action">
-        <li>Hora de creación: {{ proyect.creationdate }} </li>
-    </a>
-    <a class="list-group-item list-group-item-action">
-        <li>Fecha de inicio: {{ proyect.initialdate }}</li>
-    </a>
-    <a class="list-group-item list-group-item-action">
-        <li>Calificación: {{ proyect.qualification }}</li>
-    </a>
-    <a class="list-group-item list-group-item-action">
-        <li>Estado: {{ proyect.state }}</li>
-    </a>
-    <a class="list-group-item list-group-item-action">
-        <li>Entregables: {{ proyect.deliverables }}</li>
-    </a>
-    <a class="list-group-item list-group-item-action">
-        <li>Objetivo General: {{ proyect.generalpurpose }}</li>
-    </a>
-    <a class="list-group-item list-group-item-action">
-        <li>Objetivos especificos: {{ proyect.specificobjectives }}</li>
-    </a>
-    <a class="list-group-item list-group-item-action">
-        <li>Reconocimientos: {{ proyect.recognitions }}</li>
-    </a>
-</div>

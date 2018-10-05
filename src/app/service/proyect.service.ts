@@ -2,10 +2,17 @@ import {Injectable} from '@angular/core';
 import { Proyect } from '../components/proyectos/proyect';
 import { ApiService } from '../api.service.config';
 
+import { Observable, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class ProyectService {
     private proyectUrl = ApiService.API_URL;  //Url APi 
+    
+    constructor(
+        private http: HttpClient) { }
+    
+    
     private proyect: any = [
     {
         name: 'Proyecto de medio ambiente',
@@ -80,29 +87,26 @@ export class ProyectService {
             percentage: '45'
         }
     ];
-    constructor () {
-        console.log( " sericios proyecto " );
+    
+    getProyect(): Observable<Proyect[]> {
+        const url = `${this.proyectUrl}/listar`;
+        return  this.http.get<Proyect[]>(url);             
     }
-    getProyect() {
-        return this.proyect;
-    }
+    
+    
 }
 
 export interface Proyect {
-    name: String;
-    type: String;
-    modality: String;
-    responsable: String;
-    adviser: String;
-    participants: String[];
-    creationdate: Date;
-    initialdate: Date;
-    finaldate: Date;
-    qualification: Number;
-    state: String;
-    deliverables: Number;
-    generalpurpose: String;
-    specificobjectives: String;
-    recognitions: String;
-    porcentage: String;
+    radicado: number;
+    nombre: string;
+    tipo: number;
+    id_programa: number;
+    asesor: number;
+    responsable: number;
+    fecha_creacion: string;
+    fecha_inicio: string;
+    fecha_fin: string;
+    calificacion: string;
+    objetivo_general: string;
+    id_estado: string;
 }
