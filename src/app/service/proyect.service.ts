@@ -1,9 +1,11 @@
 import {Injectable} from '@angular/core';
 import { Proyect } from '../components/proyectos/proyect';
+import { ApiService } from '../api.service.config';
+
 
 @Injectable()
 export class ProyectService {
-
+    private proyectUrl = ApiService.API_URL;  //Url APi 
     private proyect: any = [
     {
         name: 'Proyecto de medio ambiente',
@@ -20,7 +22,8 @@ export class ProyectService {
         deliverables: 1,
         generalpurpose: 'Terminar el trabajo de grado para poder trabajar',
         specificobjectives: 'Muchos, luego los vemos',
-        recognitions: 'Ninguna'
+        recognitions: 'Ninguna',
+        percentage: '45'
     },
    {
         name: 'Proyecto de ciencias sociales',
@@ -37,7 +40,8 @@ export class ProyectService {
         deliverables: 1,
         generalpurpose: 'Terminar el trabajo de grado para poder trabajar',
         specificobjectives: 'Muchos, luego los vemos',
-        recognitions: 'Ninguna'
+        recognitions: 'Ninguna',
+        percentage: '45'
     },
      {
         name: 'Proyecto de medio naturales',
@@ -54,7 +58,26 @@ export class ProyectService {
           deliverables: 1,
           generalpurpose: 'Terminar el trabajo de grado para poder trabajar',
           specificobjectives: 'Muchos, luego los vemos',
-          recognitions: 'Ninguna'
+          recognitions: 'Ninguna',
+          percentage: '45'
+        },
+        {
+            name: 'Proyecto de medio nada',
+            type: 'Proyecto de grado',
+            modality: 'Pregrado',
+            responsable: 'Alvaro Nuñez',
+            adviser: 'Rodolfo Andres',
+            participants: ['Andres Jeronimo'],
+            creationdate: '2018-09-23',
+            initialdate: '2018-09-25',
+            finaldate: '2018-10-23',
+            qualification: 3.5,
+            state: 'Pendiente',
+            deliverables: 1,
+            generalpurpose: 'Terminar el trabajo de grado para poder trabajar',
+            specificobjectives: 'Muchos, luego los vemos',
+            recognitions: 'Ninguna',
+            percentage: '45'
         }
     ];
     constructor () {
@@ -81,4 +104,5 @@ export interface Proyect {
     generalpurpose: String;
     specificobjectives: String;
     recognitions: String;
+    porcentage: String;
 }
