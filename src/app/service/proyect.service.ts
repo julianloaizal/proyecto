@@ -89,8 +89,13 @@ export class ProyectService {
     ];
     
     getProyect(): Observable<Proyect[]> {
-        const url = `${this.proyectUrl}/listar`;
+        const url = `${this.proyectUrl}/buscar/1`;
         return  this.http.get<Proyect[]>(url);             
+    }
+
+    getProyects() {
+        const url = `${this.proyectUrl}/buscar/1`;
+        return  this.http.get<Proyect>(url);             
     }
     
     
