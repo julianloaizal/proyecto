@@ -27,7 +27,7 @@
                       Activos
                     </button>
             <div class="dropdown-menu">
-                <link [href]="url">
+                <link [href]="">
                 <p>Ver activos</p>
             </div>
 
@@ -35,11 +35,10 @@
     </thead>
     <tbody *ngFor="let proyect of proyect; let i = index">
         <tr>
-            <td>{{ proyect.name }}</td>
-            <td>{{ proyect.initialdate }}</td>
-            <td>{{ proyect.finaldate }}</td>
-            <td>{{ proyect.type }</td>
-            <td>@mdo</td>
+            <td>{{ proyect.nombre }}</td>
+            <td>{{ proyect.fecha_inicio }}</td>
+            <td>{{ proyect.fecha_fin }}</td>
+            <td>{{ proyect.porcentaje }</td>
         </tr>
     </tbody>
 </table>

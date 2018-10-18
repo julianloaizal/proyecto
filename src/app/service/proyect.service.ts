@@ -84,14 +84,10 @@ export class ProyectService {
             percentage: '45'
         }
     ];
-    //getProyect(): Observable<Proyect[]> {
-        //const url = `${this.proyectUrl}/buscar/1`;
-        //return  this.http.get<Proyect[]>(url);
-    //}
-    getProyect() {
-        return  this.proyects;
+    getProyect(): Observable<Proyect[]> {
+        const url = `${this.proyectUrl}/buscar/1`;
+        return  this.http.get<Proyect[]>(url);
     }
-
     getProyects() {
         const url = `${this.proyectUrl}/buscar/1`;
         return  this.http.get<Proyect>(url);
