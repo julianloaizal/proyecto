@@ -7,13 +7,10 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class ProyectService {
-    private proyectUrl = ApiService.API_URL;  //Url APi 
-    
+    private proyectUrl = ApiService.API_URL;
     constructor(
         private http: HttpClient) { }
-    
-    
-    private proyect: any = [
+    private proyects: any = [
     {
         name: 'Proyecto de medio ambiente',
         type: 'Proyecto de grado',
@@ -87,18 +84,18 @@ export class ProyectService {
             percentage: '45'
         }
     ];
-    
-    getProyect(): Observable<Proyect[]> {
-        const url = `${this.proyectUrl}/buscar/1`;
-        return  this.http.get<Proyect[]>(url);             
+    //getProyect(): Observable<Proyect[]> {
+        //const url = `${this.proyectUrl}/buscar/1`;
+        //return  this.http.get<Proyect[]>(url);
+    //}
+    getProyect() {
+        return  this.proyects;
     }
 
     getProyects() {
         const url = `${this.proyectUrl}/buscar/1`;
-        return  this.http.get<Proyect>(url);             
+        return  this.http.get<Proyect>(url);
     }
-    
-    
 }
 
 export interface Proyect {

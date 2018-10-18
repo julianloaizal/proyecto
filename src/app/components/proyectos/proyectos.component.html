@@ -1,17 +1,45 @@
 <hr>
-<div class="row">
-    <div class="col-sm-6" *ngFor="let proyecto of proyect">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Proyecto: {{ proyecto.nombre }}</h5>
-                <p class="card-text">Fecha de inicio: {{ proyecto.fecha_inicio }}</p>
-                <p class="card-text">Fecha de fin: {{ proyecto.fecha_fin }}</p>
-                <p class="card-text">Tipo de proyecto: {{ proyecto.tipo }}</p>
-                <a href="#" class="btn btn-primary">Ver más...</a>
+<!--div class="row">
+    <div class="col-sm-6" *ngFor="let proyecto of proyect; let i = index">
+        <div class="table">
+            <div class="table-body">
+                <h5 class="table-title">Proyecto: {{ proyecto.name }}</h5>
+                <p class="table-text">Fecha de inicio: {{ proyecto.initialdate }}</p>
+                <p class="table-text">Fecha de fin: {{ proyecto.finaldate }}</p>
+                <p class="table-text">Tipo de proyecto: {{ proyecto.type }}</p>
+                <p class="table-text">Porcentaje: {{ proyecto.percentage }}</p>
+                <a [routerLink]="['proyect',i]" class="btn btn-primary">Ver más...</a>
             </div>
         </div>
         <hr>
     </div>
-</div>
-<hr>
+</div-->
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Proyecto</th>
+            <th scope="col">Fecha inicio</th>
+            <th scope="col">Fecha fin</th>
+            <th scope="col">Tipo de proyecto</th>
+            <th scope="col">Porcentaje</th>
 
+            <button type="button" class="thead-dark" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Activos
+                    </button>
+            <div class="dropdown-menu">
+                <link [href]="url">
+                <p>Ver activos</p>
+            </div>
+
+        </tr>
+    </thead>
+    <tbody *ngFor="let proyect of proyect; let i = index">
+        <tr>
+            <td>{{ proyect.name }}</td>
+            <td>{{ proyect.initialdate }}</td>
+            <td>{{ proyect.finaldate }}</td>
+            <td>{{ proyect.type }</td>
+            <td>@mdo</td>
+        </tr>
+    </tbody>
+</table>
