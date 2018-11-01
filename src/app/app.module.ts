@@ -5,7 +5,9 @@ import { APP_ROUTING } from './app.routes';
 
 // Servicios
 import { ProyectService } from './service/proyect.service';
-import { HttpClientModule }    from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthService } from './service/auth.service';
+import { AuthGuardService } from './service/auth-guard.service';
 
 // Componentes
 import { AppComponent } from './app.component';
@@ -15,6 +17,9 @@ import { AboutComponent } from './components/about/about.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
+import { GestionproyectoComponent } from './components/gestionproyecto/gestionproyecto.component';
+
+
 
 @NgModule({
   declarations: [
@@ -24,7 +29,8 @@ import { LoginComponent } from './components/login/login.component';
     AboutComponent,
     ProyectosComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    GestionproyectoComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +38,9 @@ import { LoginComponent } from './components/login/login.component';
     APP_ROUTING
   ],
   providers: [
-    ProyectService
+    ProyectService,
+    AuthService,
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })

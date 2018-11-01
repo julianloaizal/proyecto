@@ -15,18 +15,29 @@
             <li class="nav-item">
                 <a class="nav-link" [routerLink]="['proyectos']">Proyectos activos</a>
             </li>
+            <li class="nav-item" routerLinkActive="active" *ngIf="auth.isAuthenticated()">
+                <a class="nav-link" [routerLink]="['gestionproyecto']">Add proyecto</a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" [routerLink]="['about']">About</a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <form class="form-inline" *ngIf="auth.isAuthenticated()">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-primary btn-sm" type="submit">Search</button>
         </form>
-        <ul class="navbar-nav mr-sm-5">
-            <li class="nav-item">
-                <a class="nav-link" [routerLink]="['login']">Login</a>
-            </li>
-        </ul>
+        <span class="navbar-text">
+            <button (click)="login()"
+            *ngIf="!auth.isAuthenticated()"
+            type="button" 
+            class="btn-outline-primary btn-sm">Ingresar</button>
+            
+            <button (click)="salir()"
+            *ngIf="auth.isAuthenticated()"
+            type="button" 
+            class="btn-outline-primary btn-sm">Salir</button>
+                
+        </span>
+
     </div>
 </nav>
