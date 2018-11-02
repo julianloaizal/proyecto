@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule} from '@angular/http';
 // Rutas
 import { APP_ROUTING } from './app.routes';
 
@@ -35,6 +37,9 @@ import { GestionproyectoComponent } from './components/gestionproyecto/gestionpr
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpModule,
     APP_ROUTING
   ],
   providers: [
