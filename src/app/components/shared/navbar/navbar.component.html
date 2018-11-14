@@ -21,6 +21,9 @@
             <li class="nav-item">
                 <a class="nav-link" [routerLink]="['about']">Acerca</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['login']">Lofin</a>
+            </li>
         </ul>
         <form class="form-inline" *ngIf="auth.isAuthenticated()">
             <input class="form-control" type="search" placeholder="Search" aria-label="Search">
