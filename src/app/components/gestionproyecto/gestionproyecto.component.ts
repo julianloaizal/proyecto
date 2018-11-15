@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validator, Validators } from '@angular/forms';
 
+
 @Component({
   selector: 'app-gestionproyecto',
   templateUrl: './gestionproyecto.component.html',
