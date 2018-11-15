@@ -23,14 +23,6 @@
             <th scope="col">Tipo de proyecto</th>
             <th scope="col">Porcentaje</th>
 
-            <button type="button" class="thead-dark" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Activos
-                    </button>
-            <div class="dropdown-menu">
-                <link [href]="">
-                <p>Ver activos</p>
-            </div>
-
         </tr>
     </thead>
     <tbody *ngFor="let proyect of proyect; let i = index">
@@ -38,7 +30,8 @@
             <td>{{ proyect.nombre }}</td>
             <td>{{ proyect.fecha_inicio }}</td>
             <td>{{ proyect.fecha_fin }}</td>
-            <td>{{ proyect.porcentaje }</td>
+            <td>{{ proyect.tipo }}</td>
+            <td>{{ proyect.porcentaje }}</td>
         </tr>
     </tbody>
 </table>
