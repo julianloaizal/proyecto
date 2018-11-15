@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { ProyectService } from '../../service/proyect.service';
 import { Proyect } from '../proyectos/proyect';
 
+
 @Component({
   selector: 'app-gestionproyecto',
   templateUrl: './gestionproyecto.component.html',

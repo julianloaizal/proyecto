@@ -24,20 +24,21 @@
         </ul>
         <form class="form-inline" *ngIf="auth.isAuthenticated()">
             <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-primary btn-sm" type="button">Buscar</button>
+            <button class="btn btn-success btn-sm" type="button">Buscar</button>
         </form>
 
         <span class="navbar-text">
             <button type="button" 
-                class="btn-outline-primary btn-sm">Registrar</button>
+                class="btn btn-success btn-sm">Registrar</button>
             <button (click)="login()"
             *ngIf="!auth.isAuthenticated()"
             type="button" 
-            class="btn-outline-primary btn-sm">Ingresar</button>
+            class="btn btn-success btn-sm">Ingresar</button>
             <button (click)="salir()"
                 *ngIf="auth.isAuthenticated()"
                 type="button" 
-                class="btn-outline-primary btn-sm">Salir</button>
+                class="btn btn-success btn-sm">Salir</button>
+                
                 
         </span>
     </div>
