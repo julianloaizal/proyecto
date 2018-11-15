@@ -2,12 +2,18 @@ import {Injectable} from '@angular/core';
 import { Proyect } from '../components/proyectos/proyect';
 import { ApiService } from '../api.service.config';
 
-import { Observable, of } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpRequest, HttpEvent } from '@angular/common/http';
+import { map, catchError, tap } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import swal from 'sweetalert2';
+
 
 @Injectable()
 export class ProyectService {
+
     private proyectUrl = ApiService.API_URL;
+
+    private httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
     constructor(
         private http: HttpClient) { }
     private proyects: any = [
@@ -85,13 +91,54 @@ export class ProyectService {
         }
     ];
     getProyect(): Observable<Proyect[]> {
-        const url = `${this.proyectUrl}/buscar/1`;
+        const url = `${this.proyectUrl}/listar`;
         return  this.http.get<Proyect[]>(url);
     }
     getProyects() {
         const url = `${this.proyectUrl}/buscar/1`;
         return  this.http.get<Proyect>(url);
     }
+
+    crear(proyect: Proyect[]): Observable<Proyect[]> {
+        return this.http.post(this.proyectUrl, proyect, { headers: this.httpHeaders })
+      .pipe(
+        map((response: any) => response.proyect as Proyect[]),
+        catchError(e => {
+
+          if (e.status === 400) {
+            return throwError(e);
+          }
+
+          console.error(e.error.mensaje);
+          swal(e.error.mensaje, e.error.error, 'error');
+          return throwError(e);
+        })
+      );
+      }
+      update(proyect: Proyect[]): Observable<any> {
+        return this.http.put<any>(`${this.proyectUrl}/${proyect.radicado}`, proyect, { headers: this.httpHeaders }).pipe(
+          catchError(e => {
+
+            if (e.status === 400) {
+              return throwError(e);
+            }
+
+            console.error(e.error.mensaje);
+            swal(e.error.mensaje, e.error.error, 'error');
+            return throwError(e);
+          })
+        );
+      }
+
+      delete(radicado: number): Observable<Proyect[]> {
+        return this.http.delete<Proyect[]>(`${this.proyectUrl}/${radicado}`, { headers: this.httpHeaders }).pipe(
+          catchError(e => {
+            console.error(e.error.mensaje);
+            swal(e.error.mensaje, e.error.error, 'error');
+            return throwError(e);
+          })
+        );
+      }
 }
 
 export interface Proyect {

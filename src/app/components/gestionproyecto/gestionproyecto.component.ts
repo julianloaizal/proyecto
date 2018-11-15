@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validator, Validators } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
+
+import { ProyectService } from '../../service/proyect.service';
+import { Proyect } from '../proyectos/proyect';
 
 @Component({
   selector: 'app-gestionproyecto',
@@ -7,29 +10,31 @@ import { FormGroup, FormControl, Validator, Validators } from '@angular/forms';
   styleUrls: ['./gestionproyecto.component.css']
 })
 export class GestionproyectoComponent implements OnInit {
+  private proyect: Proyect = new Proyect();
 
-  forma: FormGroup;
-  constructor() {
-    this.forma = new FormGroup({
-      'nombre': new FormControl( '', Validators.required ),
-      'tipo': new FormControl( '', Validators.required ),
-      'programa': new FormControl( '', Validators.required ),
-      'asesor': new FormControl( '', Validators.required ),
-      'responsable': new FormControl( '', Validators.required ),
-      'creacion': new FormControl( '', Validators.required ),
-      'inicio': new FormControl( '', Validators.required ),
-      'fin': new FormControl( '', Validators.required ),
-      'calificacion': new FormControl( '', Validators.required ),
-      'objetivo': new FormControl( '', Validators.required ),
-      'estado': new FormControl( '', Validators.required )
-    });
-   }
-
-   guardarCambios() {
-       console.log(this.forma.value);
+  constructor(private proyectService: ProyectService,
+              private router: Router ) {
    }
 
   ngOnInit() {
   }
+  create(): void {
+    console.log(this.proyect);
+    this.proyectService.crear(this.proyect)
+      .subscribe(
+        proyect => {
+          this.router.navigate(['/proyectos']);
+        }
+      );
+  }
 
+  update(): void {
+    console.log(this.proyect);
+    this.proyectService.update(this.proyect)
+      .subscribe(
+        json => {
+          this.router.navigate(['/proyectos']);
+        }
+      );
+  }
 }

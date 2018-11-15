@@ -1,19 +1,4 @@
 <hr>
-<!--div class="row">
-    <div class="col-sm-6" *ngFor="let proyecto of proyect; let i = index">
-        <div class="table">
-            <div class="table-body">
-                <h5 class="table-title">Proyecto: {{ proyecto.name }}</h5>
-                <p class="table-text">Fecha de inicio: {{ proyecto.initialdate }}</p>
-                <p class="table-text">Fecha de fin: {{ proyecto.finaldate }}</p>
-                <p class="table-text">Tipo de proyecto: {{ proyecto.type }}</p>
-                <p class="table-text">Porcentaje: {{ proyecto.percentage }}</p>
-                <a [routerLink]="['proyect',i]" class="btn btn-primary">Ver más...</a>
-            </div>
-        </div>
-        <hr>
-    </div>
-</div-->
 <table class="table">
     <thead class="thead-dark">
         <tr>
@@ -22,7 +7,6 @@
             <th scope="col">Fecha fin</th>
             <th scope="col">Tipo de proyecto</th>
             <th scope="col">Porcentaje</th>
-
         </tr>
     </thead>
     <tbody *ngFor="let proyect of proyect; let i = index">
@@ -31,7 +15,7 @@
             <td>{{ proyect.fecha_inicio }}</td>
             <td>{{ proyect.fecha_fin }}</td>
             <td>{{ proyect.tipo }}</td>
-            <td>{{ proyect.porcentaje }}</td>
+            <td>{{ proyect.calificacion }}</td>
         </tr>
     </tbody>
 </table>
