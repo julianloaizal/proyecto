@@ -99,10 +99,10 @@ export class ProyectService {
         return  this.http.get<Proyect>(url);
     }
 
-    crear(proyect: Proyect[]): Observable<Proyect[]> {
+    crear(proyect: Proyect): Observable<Proyect> {
         return this.http.post(this.proyectUrl, proyect, { headers: this.httpHeaders })
       .pipe(
-        map((response: any) => response.proyect as Proyect[]),
+        map((response: any) => response.proyect as Proyect),
         catchError(e => {
 
           if (e.status === 400) {
@@ -115,8 +115,8 @@ export class ProyectService {
         })
       );
       }
-      update(proyect: Proyect[]): Observable<any> {
-        return this.http.put<any>(`${this.proyectUrl}/${proyect.radicado}`, proyect, { headers: this.httpHeaders }).pipe(
+      update(proyect: Proyect): Observable<any> {
+        return this.http.put<any>(`${this.proyectUrl}/${proyect.nombre}`, proyect, { headers: this.httpHeaders }).pipe(
           catchError(e => {
 
             if (e.status === 400) {
