@@ -4,7 +4,7 @@
 
 <hr>
 
-<form #proyeForm="ngForm" (ngSubmit)="functionName">
+<form #proyeForm="ngForm" (ngSubmit)="functionName" name="form">
 
     <div id="form1">
 
@@ -12,40 +12,46 @@
             <label class="col-2 col-form-label">Nombre</label>
             <div class="col-8">
 
-                <input type="text" class="form-control" [(ngModel)]="proyect.nombre" name="nombre" placeholder="Nombre" formControlName="nombre">
+                <input type="text" class="form-control" [(ngModel)]="proyect.nombre" name="nombre" placeholder="Nombre">
                 <!-- required minlength="4" -->
-                <div class="alert alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
-                </div>
+                
             </div>
         </div>
 
         <div class="form-group row">
             <label class="col-2 col-form-label">Tipo de proyecto</label>
             <div class="col-8">
-                <input type="text" class="form-control" [(ngModel)]="proyect.tipo" name="tipo" placeholder="Tipo de programa" formControlName="tipo">
+                <input type="number" class="form-control" [(ngModel)]="proyect.tipo"  name="tipo" placeholder="Tipo de programa" >
                 <!-- required minlength="4" -->
-                <div class="alert alert-danger" *ngIf="tipo.invalid && (tipo.dirty || tipo.touched)">
-                </div>
+                
             </div>
         </div>
 
         <div class="form-group row">
             <label class="col-2 col-form-label">Programa</label>
             <div class="col-8">
-                <input type="text" class="form-control" [(ngModel)]="proyect.programa" name="programa" placeholder="Programa" formControlName="programa">
-                <!-- required minlength="4" -->
-                <div class="alert alert-danger" *ngIf="programa.invalid && (programa.dirty || programa.touched)">
-                </div>
+                <select class="custom-select custom-select-sm-9" [(ngModel)]="proyect.id_estado">
+                    <option selected>Elegir...</option>
+                    <option value="1">Activo</option>
+                    <option value="2">Inactivo</option>
+                    <option value="3">Aprovado</option>
+                    <option value="4">Reprovado</option>
+                </select>
+               
             </div>
         </div>
 
         <div class="form-group row">
             <label class="col-2 col-form-label">Asesor</label>
             <div class="col-8">
-                <input type="text" class="form-control" [(ngModel)]="proyect.asesor" name="asesor" placeholder="Asesor" formControlName="asesor">
-                <!-- required minlength="4" -->
-                <div class="alert alert-danger" *ngIf="asesor.invalid && (asesor.dirty || asesor.touched)">
-                </div>
+                <select class="custom-select custom-select-sm-9" [(ngModel)]="proyect.id_estado">
+                    <option selected>Elegir...</option>
+                    <option value="1">103823244</option>
+                    <option value="2">103982474</option>
+                    <option value="3">103928438</option>
+                    <option value="4">120923983</option>
+                </select>
+              
             </div>
         </div>
 
@@ -53,10 +59,14 @@
             <label class="col-2 col-form-label">Responsable</label>
             <div class="col-8">
 
-                <input type="text" class="form-control" [(ngModel)]="proyect.responsable" name="responsable" placeholder="Id del responsable" formControlName="responsable">
-                <!-- required minlength="4" -->
-                <div class="alert alert-danger" *ngIf="responsable.invalid && (responsable.dirty || responsable.touched)">
-                </div>
+                <select class="custom-select custom-select-sm-9" [(ngModel)]="proyect.id_estado">
+                    <option selected>Elegir...</option>
+                    <option value="1">109384343</option>
+                    <option value="2">103948984</option>
+                    <option value="3">109432847</option>
+                    <option value="4">109234287</option>
+                </select>
+               
             </div>
         </div>
 
@@ -64,10 +74,9 @@
             <label class="col-2 col-form-label">Fecha creación</label>
             <div class="col-8">
 
-                <input type="text" class="form-control" [(ngModel)]="proyect.fecha_creacion" name="fecha_creacion" placeholder="Fecha de creacion" formControlName="fecha_creacion">
+                <input type="date" class="form-control" [(ngModel)]="proyect.fecha_creacion" name="fecha_creacion" placeholder="Fecha de creacion" >
                 <!-- required minlength="4" -->
-                <div class="alert alert-danger" *ngIf="tipo.invalid && (tipo.dirty || tipo.touched)">
-                </div>
+               
 
             </div>
         </div>
@@ -76,10 +85,9 @@
             <label class="col-2 col-form-label">Fecha inicio</label>
             <div class="col-8">
 
-                <input type="text" class="form-control" [(ngModel)]="proyect.fecha_inicio" name="fecha_inicio" placeholder="Fecha de inicio" formControlName="fecha_inicio">
+                <input type="date" class="form-control" [(ngModel)]="proyect.fecha_inicio" name="fecha_inicio" placeholder="Fecha de inicio" >
                 <!-- required minlength="4" -->
-                <div class="alert alert-danger" *ngIf="fecha_inicio.invalid && (fecha_inicio.dirty || fecha_inicio.touched)">
-                </div>
+                
             </div>
         </div>
 
@@ -87,10 +95,9 @@
             <label class="col-2 col-form-label">Fecha finalización</label>
             <div class="col-8">
 
-                <input type="text" class="form-control" [(ngModel)]="proyect.fecha_fin" name="fecha_fin" placeholder="Fecha de finalización" formControlName="fecha_fin">
+                <input type="date" class="form-control" [(ngModel)]="proyect.fecha_fin" name="fecha_fin" placeholder="Fecha de finalización" >
                 <!-- required minlength="4" -->
-                <div class="alert alert-danger" *ngIf="fecha_fin.invalid && (fecha_fin.dirty || fecha_fin.touched)">
-                </div>
+            
             </div>
         </div>
 
@@ -98,10 +105,9 @@
             <label class="col-2 col-form-label">Calificación</label>
             <div class="col-8">
 
-                <input type="text" class="form-control" [(ngModel)]="proyect.calificacion" name="calificacion" placeholder="Calificacion" formControlName="calificacion">
+                <input type="text" class="form-control" [(ngModel)]="proyect.calificacion" name="calificacion" placeholder="Calificacion">
                 <!-- required minlength="4" -->
-                <div class="alert alert-danger" *ngIf="calificacion.invalid && (calificacion.dirty || calificacion.touched)">
-                </div>
+               
             </div>
         </div>
 
@@ -109,10 +115,9 @@
             <label class="col-2 col-form-label">Objetivo general</label>
             <div class="col-8">
 
-                <input type="text" class="form-control" [(ngModel)]="proyect.objetivo_general" name="objetivo_general" placeholder="Objetivo general" formControlName="objetivo_general">
+                <input type="text" class="form-control" [(ngModel)]="proyect.objetivo_general" name="objetivo_general" placeholder="Objetivo general" >
                 <!-- required minlength="4" -->
-                <div class="alert alert-danger" *ngIf="objetivo_general.invalid && (objetivo_general.dirty || objetivo_general.touched)">
-                </div>
+               
             </div>
         </div>
 
