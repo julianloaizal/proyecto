@@ -11,6 +11,7 @@ import { Proyect } from '../proyectos/proyect';
   styleUrls: ['./gestionproyecto.component.css']
 })
 export class GestionproyectoComponent implements OnInit {
+
   private proyect: Proyect = new Proyect();
 
   constructor(private proyectService: ProyectService,
@@ -24,16 +25,6 @@ export class GestionproyectoComponent implements OnInit {
     this.proyectService.crear(this.proyect)
       .subscribe(
         proyect => {
-          this.router.navigate(['/proyectos']);
-        }
-      );
-  }
-
-  update(): void {
-    console.log(this.proyect);
-    this.proyectService.update(this.proyect)
-      .subscribe(
-        json => {
           this.router.navigate(['/proyectos']);
         }
       );

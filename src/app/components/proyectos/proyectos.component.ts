@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { ProyectService } from '../../service/proyect.service';
-import {Proyect} from './proyect';
+import { Proyect, ProyectEliminado } from './proyect';
 
 @Component({
   selector: 'app-proyectos',
@@ -21,13 +21,13 @@ export class ProyectosComponent implements OnInit {
     });
     console.log(this.proyect);
   }
-  update(): void {
+  delete(): void {
     console.log(this.proyect);
-    this._proyectService.update(this.proyect)
+    this._proyectService.delete(this.proyect)
       .subscribe(
         json => {
           this.router.navigate(['/proyectos']);
         }
       );
-}
+  }
 }
