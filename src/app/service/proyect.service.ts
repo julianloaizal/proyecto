@@ -115,7 +115,7 @@ export class ProyectService {
         })
       );
       }
-      update(proyect: Proyect): Observable<any> {
+      update(proyect: Proyect[]): Observable<any> {
         return this.http.put<any>(`${this.proyectUrl}/actualizarProyecto`, proyect, { headers: this.httpHeaders }).pipe(
           catchError(e => {
 
