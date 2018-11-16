@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+
 import { ProyectService } from '../../service/proyect.service';
 import {Proyect} from './proyect';
 
@@ -8,7 +10,8 @@ import {Proyect} from './proyect';
 })
 export class ProyectosComponent implements OnInit {
   proyect: Proyect[];
-  constructor( private _proyectService: ProyectService ) {
+  constructor( private _proyectService: ProyectService,
+                private router: Router ) {
     console.log( );
   }
   ngOnInit() {
@@ -18,5 +21,12 @@ export class ProyectosComponent implements OnInit {
     });
     console.log(this.proyect);
   }
+  update(): void {
+    console.log(this.proyect);
+    this._proyectService.update(this.proyect)
+      .subscribe(
+        json => {
+          this.router.navigate(['/proyectos']);
+        }
+      );
 }
-

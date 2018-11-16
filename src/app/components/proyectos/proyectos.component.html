@@ -6,7 +6,7 @@
             <th scope="col">Fecha inicio</th>
             <th scope="col">Fecha fin</th>
             <th scope="col">Tipo de proyecto</th>
-            <th scope="col">Porcentaje</th>
+            <th scope="col">Opciones</th>
         </tr>
     </thead>
     <tbody *ngFor="let proyect of proyect; let i = index">
@@ -15,7 +15,10 @@
             <td>{{ proyect.fecha_inicio }}</td>
             <td>{{ proyect.fecha_fin }}</td>
             <td>{{ proyect.tipo }}</td>
-            <td>{{ proyect }}</td>
+            <td> <button class="btn btn-success btn-sm" role="button" (click)='update()'>Guardar</button></td>
         </tr>
     </tbody>
 </table>
+
+<hr>
+<hr>
