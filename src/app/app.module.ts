@@ -20,6 +20,7 @@ import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { GestionproyectoComponent } from './components/gestionproyecto/gestionproyecto.component';
+import { ActualizarComponent } from './components/gestionproyecto/actualizar/actualizar.component';
 
 
 
@@ -32,7 +33,8 @@ import { GestionproyectoComponent } from './components/gestionproyecto/gestionpr
     ProyectosComponent,
     FooterComponent,
     LoginComponent,
-    GestionproyectoComponent
+    GestionproyectoComponent,
+    ActualizarComponent
   ],
   imports: [
     BrowserModule,
