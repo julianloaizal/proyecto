@@ -1,17 +1,13 @@
 <hr>
-<div>
-    <a>Hola mundo</a>
-</div>
 
-<form #proyeForm="ngForm" (ngSubmit)="functionName" name="form">
 
+<form #proyeForm="ngForm">
     <div id="form1">
 
         <div class="form-group row">
             <label class="col-2 col-form-label">Nombre</label>
             <div class="col-8">
-
-                <input type="text" class="form-control" [(ngModel)]="proyect.nombre" name="nombre" placeholder="Nombre">
+                <input type="text" class="form-control" [(ngModel)]="proyect.nombre" name="nombre" placeholder="">
                 <!-- required minlength="4" -->
 
             </div>
@@ -145,5 +141,7 @@
             <button class="btn btn-success btn-sm" role="button" (click)='update()'>Guardar</button>
         </div>
     </div>
+    <hr>
+    <hr>
 
 </form>

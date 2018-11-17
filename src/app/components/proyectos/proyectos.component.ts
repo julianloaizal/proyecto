@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { ProyectService } from '../../service/proyect.service';
-import { Proyect } from './proyect';
+import { ProyectService, Proyect } from '../../service/proyect.service';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -22,13 +22,22 @@ export class ProyectosComponent implements OnInit {
     });
     console.log(this.proyect);
   }
-  delete(): void {
-    console.log(this.proyect);
-    this._proyectService.delete(this.proyect)
+
+  getProyectId(id: number): void {
+    this._proyectService.getHProyectoId(id)
+    .subscribe( proyecto => this.proyect = proyecto);
+  }
+
+  delete(radicado: number): void {
+    console.log(radicado);
+    this._proyectService.delete(radicado)
       .subscribe(
         json => {
           this.router.navigate(['/proyectos']);
         }
       );
+  }
+  rerefresh() {
+    location.reload(true);
   }
 }

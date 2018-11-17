@@ -4,7 +4,7 @@
 
 <hr>
 
-<form #proyeForm="ngForm" (ngSubmit)="functionName" name="form">
+<form #proyeForm="ngForm">
 
     <div id="form1">
 
@@ -30,7 +30,7 @@
         <div class="form-group row">
             <label class="col-2 col-form-label">Programa</label>
             <div class="col-8">
-                <select class="custom-select custom-select-sm-9" [(ngModel)]="proyect.id_estado">
+                <select class="custom-select custom-select-sm-9" [(ngModel)]="proyect.programa">
                     <option selected>Elegir...</option>
                     <option value="1">Regionalización</option>
                     <option value="2">Ude@</option>
@@ -44,7 +44,7 @@
         <div class="form-group row">
             <label class="col-2 col-form-label">Asesor</label>
             <div class="col-8">
-                <select class="custom-select custom-select-sm-9" [(ngModel)]="proyect.id_estado">
+                <select class="custom-select custom-select-sm-9" [(ngModel)]="proyect.asesor">
                     <option selected>Elegir...</option>
                     <option value="1">103823244</option>
                     <option value="2">103982474</option>
@@ -59,7 +59,7 @@
             <label class="col-2 col-form-label">Responsable</label>
             <div class="col-8">
 
-                <select class="custom-select custom-select-sm-9" [(ngModel)]="proyect.id_estado">
+                <select class="custom-select custom-select-sm-9" [(ngModel)]="proyect.responsable">
                     <option selected>Elegir...</option>
                     <option value="1">109384343</option>
                     <option value="2">103948984</option>

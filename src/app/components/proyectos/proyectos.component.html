@@ -15,11 +15,10 @@
             <td>{{ proyect.fecha_inicio }}</td>
             <td>{{ proyect.fecha_fin }}</td>
             <td>{{ proyect.tipo }}</td>
-            <td> <button class="btn btn-success btn-sm" role="button" (click)='delete()'>Eliminar</button>
-                <button class="btn btn-success btn-sm" type="button" [routerLink]="['actualizar']">Actualizar</button></td>
+            <td> <button class="btn btn-success btn-sm" role="button" (click)='delete(proyect.radicado)' click='refresh()'>Eliminar</button>
+                <button class="btn btn-success btn-sm" role="button" [routerLink]="['/actualizar']" click=getProyectId(proyect.radicado)>Actualizar</button></td>
         </tr>
     </tbody>
 </table>
-
 <hr>
 <hr>

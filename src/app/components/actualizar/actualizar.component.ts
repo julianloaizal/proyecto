@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Proyect } from '../../proyectos/proyect';
-import { ProyectService } from '../../../service/proyect.service';
+import { Proyect } from '../proyectos/proyect';
+import { ProyectService } from 'src/app/service/proyect.service';
+
 
 
 @Component({
@@ -16,6 +17,11 @@ export class ActualizarComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.proyectService.getProyect().subscribe(data => {
+      console.log( data);
+      this.proyect = data;
+    });
+    console.log(this.proyect);
   }
   update(): void {
     console.log(this.proyect);

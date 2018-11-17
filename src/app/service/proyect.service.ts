@@ -44,6 +44,10 @@ export class ProyectService {
         const url = `${this.proyectUrl}/buscar/1`;
         return  this.http.get<Proyect[]>(url);
     }
+    getHProyectoId(id: number): Observable<Proyect[]> {
+        const url = `${this.proyectUrl}/consultar/${id}`;
+        return this.http.get<Proyect[]>(url);
+      }
 
     crear(proyect: Proyect): Observable<Proyect> {
         return this.http.post(`${this.proyectUrl}/crearProyecto`, proyect, { headers: this.httpHeaders })
@@ -76,8 +80,8 @@ export class ProyectService {
         );
       }
 
-      delete(proyect: Proyect[]): Observable<Proyect[]> {
-        return this.http.delete<Proyect[]>(`${this.proyectUrl}/borrar`, { headers: this.httpHeaders }).pipe(
+      delete(radicado: number): Observable<Proyect[]> {
+        return this.http.delete<Proyect[]>(`${this.proyectUrl}/borrar/${radicado}`, { headers: this.httpHeaders }).pipe(
           catchError(e => {
             console.error(e.error.mensaje);
             swal(e.error.mensaje, e.error.error, 'error');
@@ -88,20 +92,6 @@ export class ProyectService {
 }
 
 export interface Proyect {
-    radicado: number;
-    nombre: string;
-    tipo: number;
-    id_programa: number;
-    asesor: number;
-    responsable: number;
-    fecha_creacion: string;
-    fecha_inicio: string;
-    fecha_fin: string;
-    calificacion: string;
-    objetivo_general: string;
-    id_estado: string;
-}
-export interface ProyectEliminado {
     radicado: number;
     nombre: string;
     tipo: number;
