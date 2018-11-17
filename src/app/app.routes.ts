@@ -13,11 +13,11 @@ const APP_ROUTES: Routes = [
     { path: 'about', component: AboutComponent},
     { path: 'proyectos', component: ProyectosComponent},
     { path: 'login', component: LoginComponent},
-    { path: 'actualizar', component: ActualizarComponent},
     {   path: 'gestionproyecto',
         component: GestionproyectoComponent,
         canActivate: [ AuthGuardService ]
     },
+    { path: 'actualizar', component: ActualizarComponent},
     { path: '**', pathMatch: 'full', redirectTo: '' }
 ];
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES);

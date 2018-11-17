@@ -10,13 +10,20 @@ import { ProyectService } from '../../../service/proyect.service';
   styleUrls: ['./actualizar.component.css']
 })
 export class ActualizarComponent implements OnInit {
-  private proyect: Proyect = new Proyect();
-
+   proyect: Proyect[];
   constructor(private proyectService: ProyectService,
               private router: Router ) {
    }
 
   ngOnInit() {
   }
-
+  update(): void {
+    console.log(this.proyect);
+    this.proyectService.update(this.proyect)
+      .subscribe(
+        json => {
+          this.router.navigate(['/actualizar']);
+        }
+      );
+  }
 }

@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { ProyectService } from '../../service/proyect.service';
-import { Proyect, ProyectEliminado } from './proyect';
+import { Proyect } from './proyect';
+
 
 @Component({
   selector: 'app-proyectos',
@@ -11,7 +12,7 @@ import { Proyect, ProyectEliminado } from './proyect';
 export class ProyectosComponent implements OnInit {
   proyect: Proyect[];
   constructor( private _proyectService: ProyectService,
-                private router: Router ) {
+                private router: Router) {
     console.log( );
   }
   ngOnInit() {
